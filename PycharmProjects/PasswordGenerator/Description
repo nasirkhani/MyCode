@@ -1,0 +1,16 @@
+Password Generator
+Options:
+    1) Password
+        . Length
+        . Minimum password length
+        . A-Z
+        . a-z
+        . 0-9
+        . Punctuations
+        . Minimum numbers
+        . Minimum specials
+    2) Passphrase
+        . Number of words
+        . Word separator
+        . Capitalize
+        . Include number
