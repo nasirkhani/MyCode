@@ -3,8 +3,7 @@ import urllib
 import json
 
 app = Flask(__name__)
-#print(type(data))#print(type(data))#print(type(data))#print(type(data))
-#print(type(data))#print(type(data))#print(type(data))
+
 @app.route('/show/<object>')
 def show_price(object):
     str1 = 'You have entered ' + str(object)
