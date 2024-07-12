@@ -1,0 +1,22 @@
+{
+    "name": "reza",
+    "age": 25,
+    "marks": {
+        "riazi": [
+            15,
+            16,
+            17
+        ],
+        "fizik": [
+            20,
+            19,
+            9
+        ]
+    },
+    "lessons": [
+        "fizik",
+        "honar",
+        "riazi"
+    ],
+    "b": false
+}
