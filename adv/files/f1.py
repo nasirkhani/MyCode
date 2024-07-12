@@ -1,9 +1,13 @@
 import json
+#
+# jn_str = "4"
+# py_type = json.loads(jn_str)
+#
+# print(jn_str, type(jn_str))
+# print(py_type, type(py_type))
 
-jn_str = "4"
-py_type = json.loads(jn_str)
+with open("sample3.json",'r') as jf:
+    str = json.load(jf)
 
-print(jn_str, type(jn_str))
-print(py_type, type(py_type))
-
-
+print(str)
+print(type(str))
