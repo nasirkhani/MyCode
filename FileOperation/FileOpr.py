@@ -30,7 +30,7 @@ def move_files():
             if each_file == 'py':
                 continue
             elif each_file == "":
-              break
+                break
             os.rename(each_file, extension + '_files/' + each_file)
         except:
             continue
