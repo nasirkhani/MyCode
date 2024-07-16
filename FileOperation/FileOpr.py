@@ -25,6 +25,8 @@ def create_folders():
 
 def move_files():
     for each_file in files_list:
+        if each_file == 'py':
+            continue
         extension = each_file.split('.')[1]
         try:
             os.rename(each_file, extension + '_files/' + each_file)
