@@ -25,10 +25,12 @@ def create_folders():
 
 def move_files():
     for each_file in files_list:
-        if each_file == 'py':
-            continue
-        extension = each_file.split('.')[1]
         try:
+            extension = each_file.split('.')[1]
+            if each_file == 'py':
+                continue
+            elif each_file == "":
+              break
             os.rename(each_file, extension + '_files/' + each_file)
         except:
             continue
