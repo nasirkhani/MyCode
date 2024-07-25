@@ -1,5 +1,6 @@
 from tkinter import *
 from tkinter.font import *
+import pint
 
 
 def calculate_unit():
@@ -15,6 +16,10 @@ def calculate_unit():
             result = value_from / 100
         elif unit_to == 'Kilometer':
             result = (value_from / 100) / 1000
+        elif unit_to == 'Mile':
+            result = (value_from / 100) * 1000
+        elif unit_to == 'Yard':
+            result = value_from * 0.010936132983
     print(result)
 
 

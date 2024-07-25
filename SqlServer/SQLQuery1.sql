@@ -62,3 +62,50 @@ drop schema myschema;
 go
 
 
+select
+	OrderID, CustomerID
+from dbo.Orders
+	where CustomerID = 71;
+go
+
+select
+	OrderID, CustomerID, OrderDate
+from dbo.Orders
+	where OrderID in (10248,10253,10320);
+go
+
+select
+	OrderID, OrderDate
+from dbo.Orders
+	where OrderID not in (10248,10253,10320);
+go
+
+select
+	OrderID, EmployeeID
+from dbo.Orders
+	where EmployeeID between 3 and 7;
+go
+
+select
+	OrderID, EmployeeID
+from dbo.Orders
+	where EmployeeID in (3,4,5,6,7);
+go
+
+select
+	FirstName, LastName
+from dbo.Employees
+	where LastName like N'ا%';
+go
+
+select
+	FirstName, LastName
+from dbo.Employees
+	where LastName like N'[^ا]%';
+go
+
+select
+	FirstName, LastName
+from dbo.Employees
+	where LastName not like N'ا%';
+go
