@@ -300,4 +300,102 @@ select
 	YEAR(OrderDate) + 1 as NextYear
 from dbo.Orders;
 go
->>>>>>> 806656dddbf46b8e2beb7de481ff86e441c816e2
+
+-- searched case
+select
+	CustomerID,
+	case
+		when Region IS null then N'فاقد موقعیت'
+		else Region
+	end as case_value
+from dbo.Customers
+
+
+select 
+	ProductID, ProductName, CategoryID
+from dbo.Products;
+go
+
+--simple case در این حالت بلافاصله بعد از کیس اسم فیلد را میاریم
+select
+	ProductID, ProductName, CategoryID,
+	case CategoryID
+		when 1 then N'نوشیدنی'
+		when 2 then N'ادویه جات'
+		when 3 then N'مربا'
+		when 4 then N'محصولات لبنی'
+		when 5 then N'حبوبات'
+		when 6 then N'گوشت و مرغ'
+		when 7 then N'ارگانیک'
+		when 8 then N'دریایی'
+		else N'متفرقه'
+	end as CategoryName
+from dbo.Products
+order by CategoryName;
+go
+
+select 
+	ProductID, UnitPrice
+from dbo.OrderDetails;
+go
+
+-- searched case
+select
+	ProductID, UnitPrice,
+	case
+		when UnitPrice < 50 then N'کمتر از 50'
+		when UnitPrice between 50 and 100 then N'بین 50 تا 100'
+		when UnitPrice > 100 then N'بیشتر از 100'
+	else N'نامشخص'
+	end as UnitPriceCategory
+from dbo.OrderDetails
+order by UnitPrice;
+go
+
+select
+	EmployeeID, FirstName, TitleofCourtesy,
+	case
+--		when TitleofCourtesy = 'Ms.' then 'Female'
+--		when TitleofCourtesy = 'Mrs.' then 'Female'
+		when TitleofCourtesy in ('Ms.', 'Mrs.') then 'Female'
+		when TitleofCourtesy = 'Mr.' then 'Male'
+		else N'نامشخص'
+	end as Gender
+from dbo.Employees;
+go
+
+-- 
+select 
+	City,
+	case City
+		when N'تهران'	then N'پایتخت'
+	end as N'نوع شهر'
+from dbo.Customers;
+go
+
+select
+	CustomerID, Region
+from dbo.Customers
+order by
+	case when Region IS NULL then 1 else 0 end, Region;
+go
+
+select
+	CustomerID, Region
+from dbo.Customers
+order by
+	case when Region IS NULL then 1 else 0 end, Region, CustomerID DESC;
+go
+
+select
+	distinct EmployeeID, CustomerID
+from dbo.Orders
+order by EmployeeID,CustomerID;
+go
+
+select
+	EmployeeID, CustomerID
+from dbo.Orders
+group by EmployeeID, CustomerID;
+go
+
