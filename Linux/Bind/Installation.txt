@@ -1,0 +1,2 @@
+1) Install packages:
+	dnf -y install bind bind-utils bind-chroot
