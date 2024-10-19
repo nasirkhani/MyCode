@@ -1,0 +1,8 @@
+#############################################
+For reseting netwrok:
+	7: systemctl restart network
+	8,9: nmcli networking off; nmcli networking on
+
+#############################################
+echo nameserver 1.1.1.1 > /etc/resolv.conf
+#############################################
