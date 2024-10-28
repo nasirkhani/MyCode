@@ -1,0 +1,7 @@
+UTM --> Unified Threat Management
+
+Fortigate
+Fortiweb --> WAF
+Fortianalyzer
+FortiDB
+Fortimanager

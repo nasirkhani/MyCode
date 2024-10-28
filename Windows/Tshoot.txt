@@ -1,0 +1,6 @@
+Reset the Windows SID
+	1) C:\Windows\System32\Sysprep\sysprep.exe
+	2) Change the System Cleanup Action to Enter System Out-of-Box Experience (OOBE)
+	3) Select Generalize.
+	4) Set Shutdown Options to Reboot.
+#########################################################################################
