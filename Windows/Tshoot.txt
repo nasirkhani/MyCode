@@ -4,3 +4,13 @@ Reset the Windows SID
 	3) Select Generalize.
 	4) Set Shutdown Options to Reboot.
 #########################################################################################
+Reseting Root passwd:
+
+rw init=/bin/bash
+ctrl + x
+
+mount | grep -w /
+mount -o remount,rw(ro) /
+
+exec /sbin/init or reboot
+##########################################################################################
