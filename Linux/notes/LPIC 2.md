@@ -1,7 +1,7 @@
 ---
 title: LPIC 2
 created: '2024-11-02T02:45:17.943Z'
-modified: '2024-11-02T02:58:09.525Z'
+modified: '2024-11-02T13:11:39.776Z'
 ---
 
 # LPIC 2
@@ -36,5 +36,13 @@ CPU
 
 Link: https://access.redhat.com/solutions/1160343
 ##################################################################################################################
+
+/lib/modules --> location of installed and available modules
+uname -r --> viewing version of current kernel
+insmode --> installing kernel module with absolute path
+rmmod --> removing kernel module
+modeprobe --> managing kernel module with dependencies
+depmod --> creates and updates modules.dep
+modinfo --> information about a modules
 
 
