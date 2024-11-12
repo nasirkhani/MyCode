@@ -1,7 +1,8 @@
 ---
+attachments: [Clipboard_2024-11-06-13-02-47.png, Clipboard_2024-11-06-13-02-47.png, Clipboard_2024-11-06-13-03-23.png, Clipboard_2024-11-06-13-05-09.png, Clipboard_2024-11-06-13-05-35.png]
 title: LPIC 2
 created: '2024-11-02T02:45:17.943Z'
-modified: '2024-11-02T13:11:39.776Z'
+modified: '2024-11-06T09:35:35.115Z'
 ---
 
 # LPIC 2
@@ -44,5 +45,10 @@ rmmod --> removing kernel module
 modeprobe --> managing kernel module with dependencies
 depmod --> creates and updates modules.dep
 modinfo --> information about a modules
+
+##################################################################################################################
+
+![](@attachment/Clipboard_2024-11-06-13-03-23.png)
+
 
 
