@@ -1,0 +1,13 @@
+-------------PXE---------------------
+PXE = Pre-execution Environment
+
+PXE Client   ----1---> DHCP Server
+		   
+DHCP Server  ----2---> PXE Client
+
+PXE Client   ----3---> TFTP Server
+
+TFTP Server  ----4---> PXE Client
+
+PXE Client   ----5---> NFS Server		   
+
