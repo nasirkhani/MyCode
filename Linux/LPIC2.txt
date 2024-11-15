@@ -46,3 +46,23 @@ Important:
 		(With the -n option added, of course!)
 ********************
 ---------------------------------------------------------------------------------------
+S.M.A.R.T
+Self Monitoring Analysis Reporting Technology
+smartctl
+smartd
+apt install smartmontools
+---------------------------------------------------------------------------------------
+autofs:
+	auto.master
+	auto.nfs
+apt install autofs
+---------------------------------------------------------------------------------------
+CD-DVD file systems:
+					ISO9660(Extensions --> Joliet, EI-Torito, Rock Ridge)
+							Joliet: Long file names
+							EI-Torito: bootable CD
+							Rock Ridge: Write permissions on CD & Floppy
+					UDF(Universal Disk Format)		
+					UDF: CD + DVD
+mkisofs -r -J -o CDFS.iso <Path for files>
+---------------------------------------------------------------------------------------
