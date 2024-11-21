@@ -66,3 +66,55 @@ CD-DVD file systems:
 					UDF: CD + DVD
 mkisofs -r -J -o CDFS.iso <Path for files>
 ---------------------------------------------------------------------------------------
+RAID:
+	RAID 0: Disk Striping without Parity
+	در این حالت دیتا خرد میشود و در دیسک ها ذخیره میشود و هیچ تحمل خطایی ندارد.
+	RAID 1: Disk Mirroring
+	دیتا بصورت همزمان در دیسک ها نوشته میشود. در این روش سرعت خواندن و نوشتن کند هست.
+	RAID 5: Disk Striping with Parity
+در لینوکس ما میتوانیم پارتیشن ها را raid کنیم.
+
+mdstat: multiple disk stat
+cat /proc/mdstat
+mdadm --create --verbose /dev/md0 --level=1 --raid-devices=2 /dev/sdb1 /dev/sdc1
+
+mdadm --detail --scan > /etc/mdadm.conf
+---------------------------------------------------------------------------------------
+Hard Disk Level Tools:
+hdparm = /dev/hda = IDE = ATA
+sdparm = /dev/sda = SATA = SAS
+File System Level Tools:
+tune2fs = Tools for file system level 
+sysctl = Change Settings in proc File System
+******************
+tune2fs -s 0 /dev/md0
+0 --> Enable
+1 --> Disable
+after changing superblocks numbers shuld use fsck command.
+enabling or disabling superblocks in harddisk
+---------------------------------------------------------------------------------------
+iSCSI: Protocol, is a disk(block) based storage. در این حالت کلیه مدیریت فضا
+ و امنیت بر عهده سیستم عامل سرور هست چون یک بخشی از دیسک تحت شبکه به 
+این سرور اختصاص داده شده است.
+LUN: Logical Unit Number مانند پارتیشن در سیستم عامل میباشد.
+Disk Based Storage
+iSCSI Target یعنی سروری که دیسک ها روش هست مثل SAN or NAS
+iSCSI Initiator سروری که به تارگت وصل میشود میگویند.
+***********************
+NFS
+یک پروتوکل تحت شبکه هست که وقتی برو روی یک سرور نصب میشود تمامی مدیریت فضا و امنیت بر عهده این سرور میباشد 
+File based storage.
+
+command: targetcli
+
+---------------------------------------------------------------------------------------
+route add/del default gw ipaddr nicname
+route
+
+ifconfig nicname down/up
+
+wifi:
+iwlist wlname scan 
+iwconfig wlname essid "ssidname"
+dhclient wlname
+
