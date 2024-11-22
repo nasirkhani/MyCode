@@ -21,11 +21,14 @@ Fstab (filesystem table)file:
 	Device: usually the given name or UUID of the mounted device (sda1/sda2/etc).
 	Mount Point: designates the directory where the device is/will be mounted. 
 	File System Type: nothing trick here, shows the type of filesystem in use. 
-	Options: lists any active mount options. If using multiple options they must be separated by commas. 
-	Backup Operation: (the first digit) this is a binary system where 1 = dump utility backup of a partition. 0 = no backup.
+	Options: lists any active mount options. If using multiple options they must
+	be separated by commas. 
+	Backup Operation: (the first digit) this is a binary system where 1 = dump utility
+	backup of a partition. 0 = no backup.
 				This is an outdated backup method and should NOT be used. 
 	File System Check Order: (second digit) Here we can see three possible outcomes.  
-			0 means that fsck will not check the filesystem. Numbers higher than this represent the check order. 
+			0 means that fsck will not check the filesystem. Numbers higher than
+			this represent the check order. 
 			The root filesystem should be set to 1 and other partitions set to 2. 
 
 https://www.redhat.com/en/blog/etc-fstab
@@ -41,8 +44,10 @@ Important:
 		-n
 		Causes mke2fs to not actually create a filesystem, 
 		but display what it would do if it were to create a filesystem. 
-		This can be used to DETERMINE THE LOCATION OF THE BACKUP SUPERBLOCKS for a particular filesystem, 
-		so long as the mke2fs parameters that were passed when the filesystem was originally created are used again. 
+		This can be used to DETERMINE THE LOCATION OF THE BACKUP SUPERBLOCKS for a
+		particular filesystem, 
+		so long as the mke2fs parameters that were passed when the filesystem was
+		originally created are used again. 
 		(With the -n option added, of course!)
 ********************
 ---------------------------------------------------------------------------------------
@@ -102,7 +107,8 @@ iSCSI Target یعنی سروری که دیسک ها روش هست مثل SAN or 
 iSCSI Initiator سروری که به تارگت وصل میشود میگویند.
 ***********************
 NFS
-یک پروتوکل تحت شبکه هست که وقتی برو روی یک سرور نصب میشود تمامی مدیریت فضا و امنیت بر عهده این سرور میباشد 
+یک پروتوکل تحت شبکه هست که وقتی برو روی یک سر
+ور نصب میشود تمامی مدیریت فضا و امنیت بر عهده این سرور میباشد 
 File based storage.
 
 command: targetcli
@@ -117,4 +123,19 @@ wifi:
 iwlist wlname scan 
 iwconfig wlname essid "ssidname"
 dhclient wlname
+---------------------------------------------------------------------------------------
+Backup:
+/etc/
+/var/spool/
+/home/
+/usr/local/
+---------------------------------------------------------------------------------------
+IP to Name: Forward Lookup
+Name to IP: Reverse Lookup
+
+
+BIND
+PowerDNS
+djbDNS
+DNSmsaq
 
