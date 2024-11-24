@@ -189,3 +189,4 @@ Client --> Cache Only DNS --> 1 Step --> Root DNS (the name of this step is recu
 							  3 Step --> Authoritative DNS --> Cache Only DNS (cache all the data) --> Client
 							  
 ---------------------------------------------------------------------------------------
+
