@@ -190,3 +190,6 @@ Client --> Cache Only DNS --> 1 Step --> Root DNS (the name of this step is recu
 							  
 ---------------------------------------------------------------------------------------
 
+ubuntu and debian : bind9
+rpm based: bind
+
