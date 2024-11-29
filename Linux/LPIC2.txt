@@ -131,9 +131,15 @@ Backup:
 /usr/local/
 ---------------------------------------------------------------------------------------
 IP to Name: Forward Lookup
-Name to IP: Reverse Lookup
+Name to IP: Reverse Lookup:
+					Reverse Lookup Zone Or PTR record: is for security reason for example 
+					prevention of spoofing the IP or address.
 
-
+	primary zone: means that all of the things about the domain is in this zone. (Authoritative)
+	serial number in SOA (stat of authority) means the dns must be update.
+	
+	named.conf.local ==> we create zones in this file.
+	
 BIND
 PowerDNS
 djbDNS
