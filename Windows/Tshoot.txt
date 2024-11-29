@@ -14,3 +14,11 @@ mount -o remount,rw(ro) /
 
 exec /sbin/init or reboot
 ##########################################################################################
+w32tm /config /syncfromflags:manual /manualpeerlist:ntp.mahsan.co
+w32tm /unregister
+net stop w32time
+w32tm /register
+net start w32time
+w32tm /resync
+
+

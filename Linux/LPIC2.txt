@@ -145,3 +145,57 @@ PowerDNS
 djbDNS
 DNSmsaq
 
+/etc/resolve.cong
+host google.com
+dig @9.9.9.9 nasirkhani.com --> ask from 9.9.9.9 about nasirkhani.com
+dig @9.9.9.9 nasirkhani.com MX --> ask from 9.9.9.9 about MX record in nasirkhani.com 
+dig -x 8.8.8.8 --> reverse check --> IP --> Name
+dig nasirkhani.com +trace
+
+dns <--> dns --> TCP
+user <--> DNS --> UDP
+
+CLIENT DNS:
+	Cache
+	Hosts
+	DNS Address
+
+Server DNS:
+	Zone
+	Cache
+	Hosts
+	Conditional Forwarder
+	Forwarder
+	Root Hint (Root DNS Server)
+
+
+RLD: Root Level  --> .
+TLD: Top Level Domain --> ir com net org it 
+SLD: Second level Domain 
+
+Domain: nasirkhani.com
+Zone: nasirkhani.com
+Record: www.nasirkhani.com = 99.98.97.96
+A Record: IPv4 to name
+AAAA Record: IPv6 to name
+PTR Record: Name to IP
+MX Record: Mail Exchange Record
+
+Dynamic DNS: after changing the DNS IP, it announce new dns ip to all dns servers
+
+----------------------Forwarding:
+Client --> Forwarder DNS --> ISP/Public DNS --> 1 Step --> Root DNS (the name of this step is recursion)
+												2 Step --> TLD DNS
+												3 Step --> Authoritative DNS --> ISP/Public DNS ->
+														   --> Forwarder DNS (cache the IP) --> Client
+
+----------------------Caching Only DNS:
+Client --> Cache Only DNS --> 1 Step --> Root DNS (the name of this step is recursion)
+							  2 Step --> TLD DNS
+							  3 Step --> Authoritative DNS --> Cache Only DNS (cache all the data) --> Client
+							  
+---------------------------------------------------------------------------------------
+
+ubuntu and debian : bind9
+rpm based: bind
+
