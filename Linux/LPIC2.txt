@@ -198,4 +198,9 @@ Client --> Cache Only DNS --> 1 Step --> Root DNS (the name of this step is recu
 
 ubuntu and debian : bind9
 rpm based: bind
-
+---------------------------------------------------------------------------------------
+webmin:
+	firewall-cmd --add-port=10000/tcp --zone=public --permanent
+	firewall-cmd --reload
+	netstat -pnltu | grep 10000
+---------------------------------------------------------------------------------------
