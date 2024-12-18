@@ -16,3 +16,4 @@ ADsys --> (Active Directory Group Policy integration)is an AD SYStem tool to int
 		ADsys composed of 2 parts:
 			1) adsysd: implements the group policy protocol. it relies on kerberos, samba and ldap.
 			2) adsysctl: command line interface
+openssl s_client -connect 192.168.91.11:443 -prexit

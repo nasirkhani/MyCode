@@ -204,3 +204,6 @@ webmin:
 	firewall-cmd --reload
 	netstat -pnltu | grep 10000
 ---------------------------------------------------------------------------------------
+nmblookup <workgroup name>
+nmblookup -S <workgroup name>
+
