@@ -204,6 +204,19 @@ webmin:
 	firewall-cmd --reload
 	netstat -pnltu | grep 10000
 ---------------------------------------------------------------------------------------
+<<<<<<< Updated upstream
 nmblookup <workgroup name>
 nmblookup -S <workgroup name>
 
+=======
+smbstatus
+testparam
+net status of shares
+
+---------------------------------------------------------------------------------------
+nfs defines mount point + permissions
+nfs defines options and allowed client
+rpc bind: network restriction (hosts.allow + hosts.deny)
+port mapper: client connection
+---------------------------------------------------------------------------------------
+>>>>>>> Stashed changes
