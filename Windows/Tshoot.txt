@@ -20,5 +20,14 @@ net stop w32time
 w32tm /register
 net start w32time
 w32tm /resync
+##########################################################################################
+برای سخت افزار هایی که TPM ندارد
+برای نصب ویندوز وارد دایرکتوری میشویم و دستور زیر را اجرا میکنیم
+setup /product server
+##########################################################################################
+for export from a windows we need USMT(User State Migration Tool) in WADK packge, so we need to download it from microsoft website.
+scanstate c:\export /ui:<username> /i:miguser.xml /i:migapp.xml /o 
+loadstate c:\ /ui:<username> /i:miguser.xml /i:migapp.xml
 
+MAP Microsoft Assessment tool and planning 
 
