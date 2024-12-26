@@ -45,3 +45,21 @@ NTFS			|256TB/8PB				|256TB/8PB					yes
 ReFS			|35PB					|35PB						yes
 -------------------------------------------------------------------------
 
+winver
+active directory users and computers: dsa.msc
+dnsmgmt.msc
+firewall.cpl
+*****************************************
+This PC can't run windows error:
+close
+shift + f10
+regedit
+HKEY_LOCAL_MACHINE\SYSTEM\SETUP\
+make new key --> ex: LabConfig
+Make 3 DWORD:
+BypassSecureBootCheck
+BypassRamCheck
+BypassTPM
+Make all them value to "1"
+*****************************************
+
