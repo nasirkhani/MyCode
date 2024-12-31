@@ -44,11 +44,20 @@ NTFS			|256TB/8PB				|256TB/8PB					yes
 -------------------------------------------------------------------------
 ReFS			|35PB					|35PB						yes
 -------------------------------------------------------------------------
-
+Windows Commands:
 winver
 active directory users and computers: dsa.msc
 dnsmgmt.msc
 firewall.cpl
+sysdm.cpl
+
+netsh winsock reset catalog
+netsh int ip reset resetlog.txt
+netsh winsock reset
+ipconfig /registerdns
+ipconfig /flushdns
+ipconfig /release
+
 *****************************************
 This PC can't run windows error:
 close

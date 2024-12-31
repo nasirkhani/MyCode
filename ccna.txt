@@ -1,0 +1,7 @@
+TCP/IP 5 layers:
+	application
+	transport --> TCP : Error Recovery
+				  UDP
+	network --> IP
+	data-link --> ethernet
+	physical
