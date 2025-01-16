@@ -96,8 +96,35 @@ and memory without involving the central processing unit (CPU).
 raid 0 -> stripped -> better I/O performance -> good for gaming, streaming. 20 GB = 10 GB -> 1 disk fail = all data lost
 raid 1 -> mirrored -> 1 disk fail = data is available
 raid 5 -> stripping with parity -> 1 disk failure is recoverable, 2/3 of space is utilized -> read fast write slow
+raid 10 (01)-> firt stripping next mirroring. good for mail,database and web server
+*****************************************
+iSCSI
+Layer: 3 TCP/IP 4 OSI. Transport ( Segment )
+Block level storage protocol over tcp/ip
+ISCSI works on top of TCP and allows the SCSI command to be 
+sent end-to-end over local area networks (LANs), wide area networks (WANs) or the internet.
+Support:
+	multipathing
+	jumbo framing
+	data center bridging (DCB)
 
+Fiber Channel:
+	High speed network technology(Lossless/Raw Block ddata)
+	Transport SCSI commands over Fiber Channel Protocol (FCP)
+	Data rate 128 Gb/s 
+	transmit up to 10 kilometer
 
+Fiber Channel Over Ethernet (FCoE)
+	will not work with routing protocol
+
+NFS Network File SYSTEM
+	use RPC to route requests between client and server
+
+SMB/CIFS Sevrer Message Block/Common Internet File SYSTEM
+
+NVMe-oF Non-volatile memory over fabrics
+	High speed storage protocol to access SSD over ethernet or fiber channel
+	
 
 
 
