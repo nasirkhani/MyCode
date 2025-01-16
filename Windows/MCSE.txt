@@ -93,7 +93,9 @@ Then OS assigns a DMA to Device.
 Direct memory access (DMA) is a technology that allows hardware devices to transfer data between themselves 
 and memory without involving the central processing unit (CPU).
 *****************************************
-raid 0 -> stripped -> better I/O performance -> good for gaming, streaming
+raid 0 -> stripped -> better I/O performance -> good for gaming, streaming. 20 GB = 10 GB -> 1 disk fail = all data lost
+raid 1 -> mirrored -> 1 disk fail = data is available
+raid 5 -> stripping with parity
 
 
 
