@@ -71,4 +71,30 @@ BypassRamCheck
 BypassTPM
 Make all them value to "1"
 *****************************************
+mmc ports for remote administration:
+135,445,1024,1034 must be open on firewall's remote computer.
+*****************************************
+WAC Deployment Options:
+Local Client
+Gateway Server
+Managed Server
+Failover Cluster
+
+port 443 for ssl
+port 6516 for winrm
+Do not install WAC on a domain controller
+
+*****************************************
+
+After installing drivers, OS assigns an IRQ(interrupt request) (is a signal sent to a computer's processor to 
+momentarily stop (interrupt) its operations.) The signal is usually sent by a hardware device to interrupt the 
+processor so the device gets some time to run its own operation.
+Then OS assigns a DMA to Device.
+Direct memory access (DMA) is a technology that allows hardware devices to transfer data between themselves 
+and memory without involving the central processing unit (CPU).
+*****************************************
+raid 0 -> stripped -> better I/O performance -> good for gaming, streaming
+
+
+
 
