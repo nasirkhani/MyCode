@@ -95,7 +95,8 @@ and memory without involving the central processing unit (CPU).
 *****************************************
 raid 0 -> stripped -> better I/O performance -> good for gaming, streaming. 20 GB = 10 GB -> 1 disk fail = all data lost
 raid 1 -> mirrored -> 1 disk fail = data is available
-raid 5 -> stripping with parity -> 1 disk failure is recoverable, 2/3 of space is utilized -> read fast write sl
+raid 5 -> stripping with parity -> 1 disk failure is recoverable, 2/3 of space is utilized -> read fast write slow
+
 
 
 
