@@ -17,3 +17,25 @@ ADsys --> (Active Directory Group Policy integration)is an AD SYStem tool to int
 			1) adsysd: implements the group policy protocol. it relies on kerberos, samba and ldap.
 			2) adsysctl: command line interface
 openssl s_client -connect 192.168.91.11:443 -prexit
+**********************************************************************************************
+sudo apt install winbind libnss-winbind libpam-winbind
+sudo apt install sssd-ad sssd-tools realmd adcli
+*****************************
+network :
+version : 2
+ethernets :
+eth0 :
+dhcp4: true
+nameservers:
+addresses : [10.10.4.5 ]
+search: [ example.internal]
+******************************
+
+resolvectl status
+
+/etc/nsswitch.conf 
+passwd: files systemd winbind
+group: files systemd winbind
+
+sudo pam-auth-update --enable mkhomedir
+
