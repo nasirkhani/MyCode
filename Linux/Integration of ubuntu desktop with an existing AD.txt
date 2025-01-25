@@ -39,3 +39,5 @@ group: files systemd winbind
 
 sudo pam-auth-update --enable mkhomedir
 
+sudo apt install adsys
+sudo adsysctl policy admx lts-only
