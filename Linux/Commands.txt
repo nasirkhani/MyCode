@@ -6,3 +6,14 @@ For reseting netwrok:
 #############################################
 echo nameserver 1.1.1.1 > /etc/resolv.conf
 #############################################
+
+Ubuntu: Extend your default LVM space
+
+Resize partition: sudo cfdisk
+
+Extend PV physical volume: pvresize /dev/sda3
+
+Extend logical volume: lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+
+Resize: resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+#############################################
