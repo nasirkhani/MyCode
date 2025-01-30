@@ -34,4 +34,11 @@ DHCP server sent DHCPACK to client
 Sometimes the DHCP server will respond with DHCPNACK:
 	IP address is not valid
 	scope has been deactivated
+	
+	
+https://learn.microsoft.com/en-us/windows-server/troubleshoot/dynamic-host-configuration-protocol-basics
+https://www.geeksforgeeks.org/dynamic-host-configuration-protocol-dhcp/
+https://www.netmanias.com/en/post/techdocs/5998/dhcp-network-protocol/understanding-the-basic-operations-of-dhcp
+
 ############################################################################################
+
