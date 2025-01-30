@@ -1,0 +1,36 @@
+DORA
+*******************************************************************************************
+Step 1: DHCP Discover (IP lease request)
+
+Client broadcast to the network for finding DHCP server
+DHCPDISCOVER is a broacast message
+Broadcast source address is 0.0.0.0
+Broadcast destination address is 255.255.255.255
+Client MAC address is in the message
+After 4 unsuccessful tries = client set APIPA (169.254.0.1 to 169.254.255.254)
+First attempt 2s // Second attempt 4s // Third attempt 6s // Fourth attempt 16s
+ٍEvery 5 minutes the process will be repeated.
+This process will be continued until the DHCP is available.
+*******************************************************************************************
+DHCP Offer (IP Offer Response)
+
+DHCPOFFER is a broadcast message (Part of IP conflict detection)
+The client will respond to the first DHCP server response that is receives
+	DHCPOFFER message includes:
+		Offered IP Address
+		Server and Client MAC
+		Lease Duration Time
+		DHCP Server IP + Subnet
+*******************************************************************************************
+DHCP Request (IP Selection Request)
+
+The Client has not approved the IP, so it will broadcast the reply to all DHCP servers
+DHCP broadcasts are sent using User Datagram Protocol (UDP) port numbers 67 and 68
+*******************************************************************************************
+DHCP Acknowledgement (IP Lease Acknowledgement)
+
+DHCP server sent DHCPACK to client
+
+Sometimes the DHCP server will respond with DHCPNACK:
+	IP address is not valid
+	scope has been deactivated

@@ -124,7 +124,9 @@ SMB/CIFS Sevrer Message Block/Common Internet File SYSTEM
 
 NVMe-oF Non-volatile memory over fabrics
 	High speed storage protocol to access SSD over ethernet or fiber channel
-	
+
+Traversers folder/execute file
+
 
 
 
