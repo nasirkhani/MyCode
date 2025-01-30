@@ -42,3 +42,25 @@ https://www.netmanias.com/en/post/techdocs/5998/dhcp-network-protocol/understand
 
 ############################################################################################
 
+Microsoft DHCP Relay Agent = Cisco IP Helper
+
+DHCP dynamic DNS update
+
+	Step 1: Client: IP Lease Request
+	Step 2: DHCP SRV: IP Lease Acknowledgement
+	Step 3: Client: DNS dynamic update of host (A) name
+	Step 4: DHCP SRV: DNS dynamic update of pointer (PTR) name
+
+
+A record = client1.nasir.xyz = 192.168.30.1
+PTR Record = 192.168.30.1 = client1.nasir.xyz
+
+From 2008 --> DHCP Split Scope -> Exclusion Mechanism
+
+DHCP Failover:
+	Hot Standby Mode. Two server. SRV1(Active/Primary). SRV2(Passive/Secondary). SRV1 -> Replication <- SRV2
+	Load Sharing Mode. Two server. SRV1(Active/Primary). SRV2(Active/Secondary).
+	Server Cluster(Failover Clustring). using shared storage (include DHCP Scopes). Heartbeat. Active and Passive.
+
+
+	
