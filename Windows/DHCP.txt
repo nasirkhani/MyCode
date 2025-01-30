@@ -64,3 +64,10 @@ DHCP Failover:
 
 
 	
+Multicast Scope:
+	MADCAP = Multicast Dynamic Client Allocation Protocol
+	Multicast Scope = 224.0.0.1 to 239.255.255.255 
+
+getmac /s ip
+
+
