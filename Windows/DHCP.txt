@@ -94,3 +94,9 @@ in switches there is a mechanism which name is DHCP snooping that prevent workin
 
 APIPA (Linked Local) --> 169.254.0.0 to 169.254.255.255 class B 255.255.0.0
 
+DHCP compacting and repairing:
+
+jetpack.exe --> need wins server.
+
+joined engine technology
+
