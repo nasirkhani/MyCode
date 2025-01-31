@@ -71,3 +71,26 @@ Multicast Scope:
 getmac /s ip
 
 
+Export configuration:
+Export-DhcpServer -computerName "SRV2" -File "C:\dhcpexport.xml"
+Import configuration:
+Import-DhcpServer -ComputerName "SRV1" -File "C:\dhcpexport.xml" -BackupPath "C:\dhcpbackup"
+Export configuration:
+netsh dhcp server export c:\Backup\dhcp.txt all
+Import configuration:
+netsh dhcp server import c:\Backup\dhcp.txt all
+
+IP conflict detection:
+Client send --> GARP (Gratuitous ARP) to server --> IP conflict detection, if other clients doesnt answer 
+				client accept the IP from the server, but if a client answerd to the GARP, client send a 
+				DHCPDECLINE to the server for a new IP address.
+
+unauthorized DHCP server --> rouge dhcp server
+
+
+Active Directory sent a DHCPINFORM packet to all clients to tell them that all dhcp authorized are these servers.
+
+in switches there is a mechanism which name is DHCP snooping that prevent working unauthorized DHCP servers.
+
+APIPA (Linked Local) --> 169.254.0.0 to 169.254.255.255 class B 255.255.0.0
+
