@@ -4,3 +4,21 @@ Second Level Domain (sub Domain) --> microsoft, google, yahoo, ...
 Third Level Domain (sub domain) --> hosting, job, mail, ...
 The hostname(FQDN) --> srv1, www, mail, srv2, ... Ex: srv1.hosting.google.com.
 
+How DNS Works?
+
+	www.nasirkhani.net.
+		DNS Client
+		1. Check DNS cache
+		2. Check Hosts file
+		3. Send request to DNS
+		DNS Server
+		1. Check DNS zone
+		2. Check DNS server cache
+		3. Check Hosts file
+		4. Check conditional forwarder
+		5. Check forwarders
+		6. Ask the Root Hints
+		DNS client ---> Internal DNS ---> Root Hints ---> Internal DNS -> .net. (TLD DNS Server) -> Internal DNS -> nasirkhani.net. (Second Level DNS Server) => A records (www.nasirkhani.net = 1.1.1.1) -> Internal DNS -> Client DNS
+
+DNS Deligation: DNS delegation is the process by which a parent DNS zone indicates to DNS resolvers that it has delegated the authority for a DNS subzone (or child zone) to a different set of DNS servers. This allows the DNS resolvers to locate and query the delegated DNS servers for the subzone's DNS records.
+
