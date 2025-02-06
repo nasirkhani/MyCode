@@ -127,6 +127,15 @@ NVMe-oF Non-volatile memory over fabrics
 
 Traversers folder/execute file
 
+SAM: Security Account Manager. <-- (LSD) Local Security Database
+
+ADDS: Security Database
+Domain Controller: is a server that ADDS installed on it.
+Standalone Server: is a machine in a workgroup.
+Member Server: is a machine in a domain.
+Redundancy: افزونگی، وجود جند مورد از یک چیز
+Fault Tolerance: تحمل در برابر خطا
+
 
 
 
