@@ -136,6 +136,12 @@ Member Server: is a machine in a domain.
 Redundancy: افزونگی، وجود جند مورد از یک چیز
 Fault Tolerance: تحمل در برابر خطا
 
+**********************************************************************
+default folder copy to a new user profile when the user login at first time.
+
+NTUSER.DAT keeps user settings
+AppData folder keeps applications settings
+
 
 
 
