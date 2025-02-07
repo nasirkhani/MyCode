@@ -142,6 +142,11 @@ default folder copy to a new user profile when the user login at first time.
 NTUSER.DAT keeps user settings
 AppData folder keeps applications settings
 
+whoami /user
+
+wmic useraccount where name='username' get sid
+
+wmic group where name='groupname' get sid
 
 
 
