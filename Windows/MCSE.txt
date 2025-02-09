@@ -162,9 +162,9 @@ Trailer: اطلاعات مربوط به خطایابی اضافه میشود.
 
 IGMP -> is for broadcast packet
 
-Class A -> from 1.0.0.0 to 126.255.255.255
+Class A -> from 1.0.0.0 to 126.255.255.255 -> 126
 127.0.0.1 to 127.255.255.255 -> loopback network
-Class B -> from 128 to 191 
+Class B -> from 128 to 191 -> 
 Class C -> from 192 to 223
 Class D -> from 224 to 239 -> multicast
 Class E -> from 240 to 255 -> reserved
