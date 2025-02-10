@@ -169,3 +169,12 @@ Class C -> from 192 to 223
 Class D -> from 224 to 239 -> multicast
 Class E -> from 240 to 255 -> reserved
 
+ARP -> OSI L3
+
+SMTP
+FTP
+HTTP
+HTTPS
+DNS
+SNMO
+TELNET
