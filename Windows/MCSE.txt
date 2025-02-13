@@ -178,3 +178,7 @@ HTTPS
 DNS
 SNMO
 TELNET
+
+fsmgmt.msc
+
+
