@@ -6,8 +6,8 @@
 	rpm -qc bind
 	cp /etc/named.conf ~
 
-3) 	listen-on port 53 {any} {none}or {specific IP}
-	listen-on-v6 port 53 {any} {none}or {specific IP}
+3) 	listen-on port 53 {any} {none} or {specific IP}
+	listen-on-v6 port 53 {any} {none} or {specific IP}
 	allow-query {any or specific IPs}
 4) For chroot:
 	systemctl stop named
@@ -40,4 +40,12 @@ zone "domain.local" {
 };
 ###########################################
 firewall-cmd --add-port=53/{tcp,udp} --permanent
+###########################################
+Forwarder:
+
+zone "Domain.com" {
+	type forward;
+	forwarders { DNS IP(s); };
+	forward only;
+}
 ###########################################
