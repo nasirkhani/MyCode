@@ -34,3 +34,5 @@ MAP Microsoft Assessment tool and planning
 disabling APIPA:
 registry: HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\tcpip\Parameters. And create new DWORD (32 Bit) Value and give it name as “IPAutoconfigurationEnabled” and value must be 00000000.
 
+Set-ADForestMode -Identity “ab.xyz.com” -ForestMode Windows2008Forest
+Set-ADDomainMode -Identity “ab.xyz.com” -DomainMode Windows2008Domain
