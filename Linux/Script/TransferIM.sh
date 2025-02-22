@@ -16,7 +16,7 @@ remote_file="${remote_dir%/}/${filename}"
 ###############################################################################
 
 # Generate new filename with date
-current_date=$(date +%Y-%m-%d)
+current_date=$(date +%Y-%m-%d-%H-%M-%S)
 base_name=$(basename "$filename")
 new_filename="${base_name%.*}_${current_date}.${filename##*.}"
 local_file="${local_dest%/}/${new_filename}"
