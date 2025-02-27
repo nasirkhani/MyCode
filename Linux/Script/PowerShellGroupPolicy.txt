@@ -1,0 +1,43 @@
+# Configure AD Group Policy for Linux Clients Joined to AD
+# Requires RSAT and GroupPolicy Module
+# Run this script on a Domain Controller or machine with RSAT installed
+
+# Import GroupPolicy Module
+Import-Module GroupPolicy -ErrorAction Stop
+
+# Define GPO Name and Target OU
+$GpoName = "LinuxClients_AccountPolicies"
+$TargetOU = "OU=LinuxMachines,DC=example,DC=com"  # Update this to your OU
+
+# Check if GPO already exists
+if (-not (Get-GPO -Name $GpoName -ErrorAction SilentlyContinue)) {
+    # Create new GPO
+    New-GPO -Name $GpoName -Comment "GPO for Linux Clients Account Policies" | Out-Null
+    Write-Host "Created GPO: $GpoName"
+} else {
+    Write-Host "GPO $GpoName already exists. Modifying existing policy."
+}
+
+# Configure Password Policy (Affects domain-wide user accounts)
+Set-GPPasswordPolicy -Name $GpoName -MaxPasswordAge 90 -MinPasswordLength 8 -PasswordHistoryCount 5 -ComplexityEnabled $true -LockoutThreshold 5 -LockoutDuration 00:30:00 -ResetLockoutCounterAfter 00:30:00 -ErrorAction Stop
+
+# Configure Kerberos Policy (Ticket lifetimes)
+Set-GPKerberosPolicy -Name $GpoName -MaxTicketAge 10 -MaxRenewAge 7 -MaxServiceAge 600 -ErrorAction Stop
+
+# Link GPO to the Target OU
+$existingLink = Get-GPO -Name $GpoName | Get-GPLink -Target $TargetOU -ErrorAction SilentlyContinue
+if (-not $existingLink)) {
+    New-GPLink -Name $GpoName -Target $TargetOU -Enforced Yes -ErrorAction Stop
+    Write-Host "Linked GPO to $TargetOU"
+} else {
+    Write-Host "GPO already linked to $TargetOU"
+}
+
+Write-Host "Script completed. Ensure Linux clients are configured to enforce AD policies (e.g., SSSD)."
+
+
+
+
+
+
+# Add-WindowsFeature RSAT-AD-PowerShell

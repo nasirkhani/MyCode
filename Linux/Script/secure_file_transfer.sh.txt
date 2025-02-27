@@ -1,0 +1,80 @@
+#!/bin/bash
+
+# Function to check if a file exists remotely
+remote_file_exists() {
+    local user_host="$1"
+    local file_path="$2"
+    ssh "$user_host" "test -e '$file_path'" && return 0 || return 1
+}
+
+# Function to list files in a remote directory
+list_remote_files() {
+    local user_host="$1"
+    local remote_dir="$2"
+    echo -e "\nFiles in remote directory:"
+    ssh "$user_host" "ls -l '$remote_dir'"
+    echo ""
+}
+
+# Main script
+read -p "Enter remote host (e.g., 192.168.1.1, example.com): " remote_host
+read -p "Enter SSH username: " username
+read -p "Enter remote directory path: " remote_dir
+
+user_host="${username}@${remote_host}"
+
+# Validate remote directory
+if ! remote_file_exists "$user_host" "$remote_dir"; then
+    echo "Error: Remote directory does not exist or is inaccessible"
+    exit 1
+fi
+
+# List remote files and get filename
+list_remote_files "$user_host" "$remote_dir"
+read -p "Enter the filename to transfer: " filename
+
+# Validate remote file
+remote_file="${remote_dir%/}/$filename"
+if ! remote_file_exists "$user_host" "$remote_file"; then
+    echo "Error: File does not exist on remote server"
+    exit 1
+fi
+
+# Get local destination
+read -p "Enter local destination directory: " local_dest
+
+# Validate local destination
+if [ ! -d "$local_dest" ]; then
+    read -p "Local directory doesn't exist. Create it? (y/n) " create_dir
+    if [[ "$create_dir" =~ ^[Yy]$ ]]; then
+        mkdir -p "$local_dest" || exit 1
+    else
+        echo "Aborting..."
+        exit 1
+    fi
+fi
+
+# Generate new filename with date
+current_date=$(date +%Y-%m-%d)
+base_name=$(basename "$filename")
+new_filename="${base_name%.*}_${current_date}.${filename##*.}"
+local_file="${local_dest%/}/$new_filename"
+
+# Check for duplicates
+if [ -e "$local_file" ]; then
+    echo "Error: Destination file already exists: $local_file"
+    exit 1
+fi
+
+# Perform the file transfer
+echo -e "\nTransferring file..."
+scp -p "$user_host:'$remote_file'" "$local_file"
+
+# Verify transfer
+if [ $? -eq 0 ] && [ -f "$local_file" ]; then
+    echo -e "\nFile successfully transferred and renamed to:"
+    echo "$local_file"
+else
+    echo "Error: File transfer failed"
+    exit 1
+fi

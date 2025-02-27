@@ -1,0 +1,51 @@
+#!/bin/bash
+
+###############################################################################
+remote_host="example.com"
+username="your_username"
+remote_dir="/path/to/remote/directory"
+filename="your_file.txt"
+local_dest="/path/to/local/destination"
+###############################################################################
+
+user_host="${username}@${remote_host}"
+###############################################################################
+
+remote_file="${remote_dir%/}/${filename}"
+
+###############################################################################
+current_date=$(date +%Y-%m-%d)
+base_name=$(basename "$filename")
+new_filename="${base_name%.*}_${current_date}.${filename##*.}"
+local_file="${local_dest%/}/${new_filename}"
+
+###############################################################################
+if ! ssh "$user_host" "test -e '$remote_file'"; then
+    echo "Error: Remote file does not exist: $remote_file"
+    exit 1
+fi
+###############################################################################
+
+if [ ! -d "$local_dest" ]; then
+    echo "Error: Local destination directory does not exist: $local_dest"
+    exit 1
+fi
+
+###############################################################################
+if [ -e "$local_file" ]; then
+    echo "Error: Destination file already exists: $local_file"
+    exit 1
+fi
+
+###############################################################################
+echo "Transferring file from $remote_file to $local_file..."
+scp -p "$user_host:'$remote_file'" "$local_file"
+
+###############################################################################
+if [ $? -eq 0 ] && [ -f "$local_file" ]; then
+    echo "File successfully transferred and renamed to: $local_file"
+else
+    echo "Error: File transfer failed"
+    exit 1
+fi
+###############################################################################
