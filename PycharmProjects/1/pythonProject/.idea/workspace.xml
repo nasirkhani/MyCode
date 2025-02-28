@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="931d3bf8-ba4c-4c4a-8e3b-b4b650c9188e" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Dictionary.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/number.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +35,8 @@
   "keyToString": {
     "Python.Dictionary.executor": "Run",
     "Python.T1.executor": "Run",
+    "Python.number.executor": "Run",
+    "Python.أع.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
@@ -72,7 +74,7 @@
       <workItem from="1739467733386" duration="201000" />
       <workItem from="1740083046973" duration="193000" />
       <workItem from="1740669630702" duration="322000" />
-      <workItem from="1740752418209" duration="917000" />
+      <workItem from="1740752418209" duration="4285000" />
     </task>
     <servers />
   </component>
@@ -82,5 +84,7 @@
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/pythonProject$T1.coverage" NAME="T1 Coverage Results" MODIFIED="1740753009005" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/pythonProject$Dictionary.coverage" NAME="Dictionary Coverage Results" MODIFIED="1740753313121" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pythonProject$.coverage" NAME="أع Coverage Results" MODIFIED="1740757371668" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pythonProject$number.coverage" NAME="number Coverage Results" MODIFIED="1740760397159" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
