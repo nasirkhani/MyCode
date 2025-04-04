@@ -7,4 +7,12 @@ tar
 star
 cpio	, 
 ##############################################
+/etc/defaults/useradd
+/etc/skel/
+/etc/login.defs
+
+usermod -d "/home/newknox" -m knox
+gpasswd -d user group
+groupmod -n oldgroupname newgroupname
+lid -g groupname	#Display group's user
 
