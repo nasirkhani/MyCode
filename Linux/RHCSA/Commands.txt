@@ -1,0 +1,10 @@
+Compress, Uncompress, View
+gzip	, gunzip	, zcat
+bzip2	, bunzip2	, bzcat
+xz		, unxz		, xzcat
+zip		, unzip					
+tar
+star
+cpio	, 
+##############################################
+
